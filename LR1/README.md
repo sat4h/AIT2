@@ -11,6 +11,10 @@
 ## Часть 1. Перед выполнением была выполнена настройка IDE
 
 ### Настройка VS Code:
+Python:
+![image](https://github.com/user-attachments/assets/371c5b30-a19e-497f-811c-128c7ff4707d)
+Remote Development:
+![image](https://github.com/user-attachments/assets/f6e967ed-bb45-4a4e-a240-aab86e89f5b5)
 
 
 
