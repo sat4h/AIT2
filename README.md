@@ -18,9 +18,7 @@ MyDocker.dockerfile:28
 
 ``ARG ubuntu_ver=20.04``
 
-- Тут появилась ошибка с build_thread_count, но я вспомнил что я не задал ей значение ``export build_thread_count=1``
-
-
+- Тут появилась ошибка с build_thread_count, я вспомнил что я не задал ей значение ``export build_thread_count=1``,но это не решило проблемы.
 ```
   75 |     -D BUILD_EXAMPLES=ON .." && echo ${cmake_command} && cmake ${cmake_command}
   76 |     
@@ -30,6 +28,16 @@ MyDocker.dockerfile:28
 
 ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}
 ```
+- Проблемы были с конфигурацией numpy, после добавления следующих строк все исправилось:
+
+```
+# Очистка кеша перед запуском CMake
+RUN rm -rf /usr/local/Dev/opencv-${ocv_ver}/build/*
+
+# CMake конфигурация для сборки OpenCV
+RUN pip3 install numpy
+```
+
 
 Обновленный [Docker файл](MyDocker). Основные изменения:
 
