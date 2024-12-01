@@ -8,18 +8,20 @@
 
 ![image](https://github.com/user-attachments/assets/77226828-6519-4701-8fa3-f46de08591da)
 
-- Далее у меня появилась другая проблема уже с ubuntu, тут я порылся и подумул может просто указать другую версию:
+- Далее у меня появилась другая проблема уже с ubuntu, тут я подумул может просто указать другую версию и это помогло:
 
 ```
  1 warning found (use --debug to expand):
  - InvalidDefaultArgInFrom: Default value for ARG ubuntu:$ubuntu_ver results in empty or invalid base image name (line 2)
 MyDocker.dockerfile:28
 ```
+
 ``ARG ubuntu_ver=20.04``
 
 - Тут появилась ошибка с build_thread_count, но я вспомнил что я не задал ей значение ``export build_thread_count=1``
 
 ```
+
 MyDocker.dockerfile:77
 --------------------
   75 |     -D BUILD_EXAMPLES=ON .." && echo ${cmake_command} && cmake ${cmake_command}
@@ -29,6 +31,7 @@ MyDocker.dockerfile:77
   79 |     RUN ldconfig
 --------------------
 ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}
+
 ```
 
 
