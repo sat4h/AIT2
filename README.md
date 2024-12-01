@@ -30,9 +30,4 @@ MyDocker.dockerfile:28
   79 |     RUN ldconfig
 
 ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}
-
 ```
-ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}" did not complete successfully: exit code: 2
-```
-
-
