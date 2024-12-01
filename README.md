@@ -30,3 +30,21 @@ MyDocker.dockerfile:28
 
 ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}
 ```
+
+Обновленный [Docker файл](MyDocker.docker). Основные изменения:
+
+- В изначальном докер файле используется ubuntu:22.04 (позже задается переменной ubuntu_ver).
+Во втором файле используется ubuntu:20.04.
+- Убраны переменные:
+```
+ARG cuda_ver
+ARG cuda_distro
+ARG cuda_arch
+RUN apt -y install linux-headers-$(uname -r) build-essential
+RUN apt-key del 7fa2af80
+RUN wget https://developer.download.nvidia.com/compute/cuda/repos/$cuda_distro/$cuda_arch/cuda-keyring_1.1-1_all.deb
+RUN dpkg -i cuda-keyring_1.1-1_all.deb
+RUN apt update
+RUN apt install cuda-$cuda_ver
+```
+- И отключена CUDA конфигурация: ``-D WITH_CUDA=OFF``
