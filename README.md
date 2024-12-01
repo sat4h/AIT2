@@ -32,8 +32,6 @@ MyDocker.dockerfile:28
 ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}
 
 ```
-
-
 MyDocker.dockerfile:77
 --------------------
   75 |     -D BUILD_EXAMPLES=ON .." && echo ${cmake_command} && cmake ${cmake_command}
