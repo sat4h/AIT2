@@ -28,6 +28,7 @@ MyDocker.dockerfile:28
 
 ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}
 ```
+
 - Проблемы были с конфигурацией numpy, после добавления следующих строк все исправилось:
 
 ```
@@ -37,6 +38,12 @@ RUN rm -rf /usr/local/Dev/opencv-${ocv_ver}/build/*
 # CMake конфигурация для сборки OpenCV
 RUN pip3 install numpy
 ```
+
+-Значение у ``export build_thread_count=10` вернул к 10.
+
+Билд закончен
+![image](https://github.com/user-attachments/assets/0622b1f8-7f48-41b9-8f72-1750065c707a)
+
 
 
 Обновленный [Docker файл](MyDocker). Основные изменения:
