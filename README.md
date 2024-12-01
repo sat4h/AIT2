@@ -22,7 +22,6 @@ MyDocker.dockerfile:28
 
 
 ```
-
   75 |     -D BUILD_EXAMPLES=ON .." && echo ${cmake_command} && cmake ${cmake_command}
   76 |     
   77 | >>> RUN make -j${build_thread_count}
