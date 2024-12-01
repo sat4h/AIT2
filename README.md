@@ -20,16 +20,15 @@ MyDocker.dockerfile:28
 
 - Тут появилась ошибка с build_thread_count, но я вспомнил что я не задал ей значение ``export build_thread_count=1``
 
+
 ```
 
-MyDocker.dockerfile:77
---------------------
   75 |     -D BUILD_EXAMPLES=ON .." && echo ${cmake_command} && cmake ${cmake_command}
   76 |     
   77 | >>> RUN make -j${build_thread_count}
   78 |     RUN make install
   79 |     RUN ldconfig
---------------------
+
 ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}
 
 ```
