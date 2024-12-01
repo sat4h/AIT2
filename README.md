@@ -31,7 +31,7 @@ MyDocker.dockerfile:28
 ERROR: failed to solve: process "/bin/sh -c make -j${build_thread_count}
 ```
 
-Обновленный [Docker файл](MyDocker.docker). Основные изменения:
+Обновленный [Docker файл](MyDocker). Основные изменения:
 
 - В изначальном докер файле используется ubuntu:22.04 (позже задается переменной ubuntu_ver).
 Во втором файле используется ubuntu:20.04.
